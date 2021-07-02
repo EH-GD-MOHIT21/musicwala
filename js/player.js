@@ -25,7 +25,7 @@ while (true) {
         songAddress = "media/Heartless - Badshah 320 Kbps.mp3"
         break
     }
-    if (songAddress != null && songAddress == "") {
+    if (songAddress != null && songAddress != "") {
         if (prompt("provided path is " + songAddress + " type yes for confirm?") == "yes") {
             break
         }
