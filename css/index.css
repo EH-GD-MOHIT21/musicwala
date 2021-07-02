@@ -1,0 +1,180 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.parentcontainer {
+  width: 400px;
+  height: 400px;
+  background: #FEAC5E;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#4BC0C8), color-stop(#C779D0), to(#FEAC5E));
+  background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 9px 10px #888888;
+          box-shadow: 5px 9px 10px #888888;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.parentcontainer .containermanager .lowercontainer button:nth-child(1) {
+  position: absolute;
+  top: 87%;
+  left: 25%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.parentcontainer .containermanager .lowercontainer button:nth-child(2) {
+  position: absolute;
+  top: 87%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.parentcontainer .containermanager .lowercontainer button:nth-child(3) {
+  position: absolute;
+  top: 87%;
+  left: 75%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.parentcontainer .containermanager .lowercontainer button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.parentcontainer .containermanager .lowercontainer button i {
+  font-size: 32px;
+}
+
+.parentcontainer .containermanager .lowercontainer button .playbtn {
+  font-size: 50px;
+}
+
+.parentcontainer .containermanager .playline,
+.parentcontainer .containermanager .playlinecontainer {
+  width: 95%;
+  height: 7px;
+  background: white;
+  z-index: 1;
+  border-radius: 5px;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.parentcontainer .containermanager .playline {
+  width: 100%;
+  z-index: 2;
+  background: red;
+  position: absolute;
+  top: 52%;
+  left: -50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.parentcontainer .containermanager .playlinecontainer {
+  overflow: hidden;
+}
+
+.parentcontainer .containermanager .starttime {
+  position: absolute;
+  top: 80%;
+  left: 10%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.parentcontainer .containermanager .endtime {
+  position: absolute;
+  top: 80%;
+  left: 90%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.parentcontainer .containermanager .imgarea {
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  position: absolute;
+  top: 27%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.parentcontainer .containermanager .imgarea i {
+  position: absolute;
+  top: 44%;
+  left: 44%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 150px;
+  color: #E11D48;
+}
+
+.parentcontainer .containermanager .songcredits {
+  position: absolute;
+  top: 61%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.footer {
+  display: block;
+  width: 100vw;
+  margin: auto;
+  position: absolute;
+  top: 90vh;
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  .parentcontainer {
+    width: 95%;
+  }
+  .parentcontainer .containermanager .lowercontainer button:nth-child(1) {
+    position: absolute;
+    top: 90%;
+    left: 15%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .parentcontainer .containermanager .lowercontainer button:nth-child(2) {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .parentcontainer .containermanager .lowercontainer button:nth-child(3) {
+    position: absolute;
+    top: 90%;
+    left: 85%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,125 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@mixin centeritem($method:flex, $justifyit:center, $top:50%, $left:50%, $transform:1) {
+    @if($method=="flex") {
+        display: flex;
+        justify-content: $justifyit;
+        align-items: center;
+    }
+    @else {
+        position: absolute;
+        top: $top;
+        left: $left;
+        @if($transform) {
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.parentcontainer {
+    width: 400px;
+    height: 400px;
+    background: #FEAC5E;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 10px;
+    box-shadow: 5px 9px 10px #888888;
+    @include centeritem("noflex");
+    @for $cnt from 1 through 3 {
+        .containermanager .lowercontainer button:nth-child(#{$cnt}) {
+            @include centeritem("noflex", "", 87%, $cnt*25%, 1);
+        }
+    }
+    .containermanager .lowercontainer button {
+        background: none;
+        border: none;
+        outline: none;
+        i {
+            font-size: 32px;
+        }
+        .playbtn {
+            font-size: 50px;
+        }
+    }
+    .containermanager {
+        .playline,
+        .playlinecontainer {
+            width: 95%;
+            height: 7px;
+            background: white;
+            z-index: 1;
+            border-radius: 5px;
+            @include centeritem("noflex", "", 75%, 50%);
+        }
+        .playline {
+            width: 100%;
+            z-index: 2;
+            background: red;
+            @include centeritem("noflex", "", 52%, -50%)
+        }
+        .playlinecontainer {
+            overflow: hidden;
+        }
+        .starttime {
+            @include centeritem("noflex", "", 80%, 10%, 1)
+        }
+        .endtime {
+            @include centeritem("noflex", "", 80%, 90%, 1)
+        }
+        .imgarea {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            @include centeritem("noflex", "", 27%, 50%);
+            i {
+                @include centeritem("noflex", "", 44%, 44%);
+                font-size: 150px;
+                color: #E11D48;
+            }
+        }
+        .songcredits {
+            @include centeritem("noflex", "", 61%, 50%);
+            text-align: center;
+        }
+    }
+}
+
+.footer {
+    display: block;
+    width: 100vw;
+    margin: auto;
+    position: absolute;
+    top: 90vh;
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+}
+
+@media(max-width:400px) {
+    .parentcontainer {
+        width: 95%;
+    }
+    @for $cnt from 1 through 3 {
+        .parentcontainer .containermanager .lowercontainer button:nth-child(#{$cnt}) {
+            @if($cnt==1) {
+                @include centeritem("noflex", "", 90%, 15%, 1);
+            }
+            @else if($cnt==2) {
+                @include centeritem("noflex", "", 90%, 50%, 1);
+            }
+            @else {
+                @include centeritem("noflex", "", 90%, 85%, 1);
+            }
+        }
+    }
+}

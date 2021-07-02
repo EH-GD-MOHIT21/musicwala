@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="parentcontainer">
+        <div class="uppercontainer"></div>
+        <div class="containermanager">
+            <div class="imgarea">
+                <i id="imgarea" class="fa fa-music" aria-hidden="true"></i>
+            </div>
+            <div class="songcredits">
+                <h3>Heartless Badshah</h3>
+                <h4>Badshah</h4>
+            </div>
+            <div class="playlinecontainer">
+                <div class="playline" id="mainplayline"></div>
+            </div>
+            <div class="audiocontainer">
+                <audio id="mainaudio" src="C:/Users/exper/Music/Heartless - Badshah 320 Kbps.mp3" hidden></audio>
+            </div>
+            <div id="starttime" class="starttime">0:00</div>
+            <div id="finalDur" class="endtime">00:00</div>
+            <div class="lowercontainer">
+                <button><i id="prevbtn" class="fa fa-step-backward" aria-hidden="true"></i></button>
+                <button><i id="playbtn" class="fa fa-play-circle-o playbtn" aria-hidden="true"></i></button>
+                <button><i id="nxtbtn" class="fa fa-step-forward" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <footer>copyright &copy; 2021 musicwala | All Rights Reserved</footer>
+    </div>
+</body>
+<script src="js/player.js"></script>
+<script src="js/apiwala.js"></script>
+
+</html>
