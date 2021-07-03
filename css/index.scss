@@ -34,8 +34,19 @@
     @include centeritem("noflex");
     @for $cnt from 1 through 3 {
         .containermanager .lowercontainer button:nth-child(#{$cnt}) {
-            @include centeritem("noflex", "", 87%, $cnt*25%, 1);
+            @if($cnt==1) {
+                @include centeritem("noflex", "", 89%, 30%, 1);
+            }
+            @else if($cnt==2) {
+                @include centeritem("noflex", "", 89%, 50%, 1);
+            }
+            @else {
+                @include centeritem("noflex", "", 89%, 70%, 1);
+            }
         }
+    }
+    .containermanager .sublowercontainer {
+        font-size: 32px;
     }
     .containermanager .lowercontainer button {
         background: none;
@@ -49,6 +60,15 @@
         }
     }
     .containermanager {
+        .uppericons {
+            font-size: 25px;
+            #animateManager {
+                @include centeritem("noflex", "", 5%, 95%);
+            }
+            #helpguide {
+                @include centeritem("noflex", "", 5%, 5%);
+            }
+        }
         .playline,
         .playlinecontainer {
             width: 95%;
@@ -78,11 +98,48 @@
             height: 200px;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
+            z-index: 5;
+            overflow: hidden;
             @include centeritem("noflex", "", 27%, 50%);
             i {
+                z-index: 10;
                 @include centeritem("noflex", "", 44%, 44%);
                 font-size: 150px;
                 color: #E11D48;
+            }
+            .vlines-con {
+                .vlines {
+                    height: 200px;
+                    width: 10px;
+                    background: red;
+                    position: absolute;
+                    opacity: 0.4;
+                }
+                @for $cnt from 1 through 10 {
+                    .vlines:nth-child(#{$cnt}) {
+                        left: $cnt*9%;
+                        @if($cnt==7 or $cnt==3) {
+                            background: #e84393;
+                            top: 80%;
+                        }
+                        @else if($cnt%5==0) {
+                            background: #be2edd;
+                            top: 20%;
+                        }
+                        @else if($cnt%4==0) {
+                            background: #82589F;
+                            top: 70%;
+                        }
+                        @else if($cnt%3==0) {
+                            background: #6D214F;
+                            top: 40%;
+                        }
+                        @else {
+                            background: #22a6b3;
+                            top: 50%;
+                        }
+                    }
+                }
             }
         }
         .songcredits {
@@ -101,8 +158,17 @@
     text-align: center;
 }
 
-button {
+button,
+i {
     cursor: pointer;
+}
+
+#bfwd {
+    @include centeritem("noflex", "", 89%, 10%);
+}
+
+#nfwd {
+    @include centeritem("noflex", "", 89%, 90%);
 }
 
 @media(max-width:400px) {
@@ -112,14 +178,20 @@ button {
     @for $cnt from 1 through 3 {
         .parentcontainer .containermanager .lowercontainer button:nth-child(#{$cnt}) {
             @if($cnt==1) {
-                @include centeritem("noflex", "", 90%, 15%, 1);
+                @include centeritem("noflex", "", 90%, 30%, 1);
             }
             @else if($cnt==2) {
                 @include centeritem("noflex", "", 90%, 50%, 1);
             }
             @else {
-                @include centeritem("noflex", "", 90%, 85%, 1);
+                @include centeritem("noflex", "", 90%, 70%, 1);
             }
         }
+    }
+    #bfwd {
+        @include centeritem("noflex", "", 90%, 10%);
+    }
+    #nfwd {
+        @include centeritem("noflex", "", 90%, 90%);
     }
 }

@@ -26,15 +26,15 @@
 
 .parentcontainer .containermanager .lowercontainer button:nth-child(1) {
   position: absolute;
-  top: 87%;
-  left: 25%;
+  top: 89%;
+  left: 30%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
 
 .parentcontainer .containermanager .lowercontainer button:nth-child(2) {
   position: absolute;
-  top: 87%;
+  top: 89%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -42,10 +42,14 @@
 
 .parentcontainer .containermanager .lowercontainer button:nth-child(3) {
   position: absolute;
-  top: 87%;
-  left: 75%;
+  top: 89%;
+  left: 70%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.parentcontainer .containermanager .sublowercontainer {
+  font-size: 32px;
 }
 
 .parentcontainer .containermanager .lowercontainer button {
@@ -60,6 +64,26 @@
 
 .parentcontainer .containermanager .lowercontainer button .playbtn {
   font-size: 50px;
+}
+
+.parentcontainer .containermanager .uppericons {
+  font-size: 25px;
+}
+
+.parentcontainer .containermanager .uppericons #animateManager {
+  position: absolute;
+  top: 5%;
+  left: 95%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.parentcontainer .containermanager .uppericons #helpguide {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .parentcontainer .containermanager .playline,
@@ -112,6 +136,8 @@
   height: 200px;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
+  z-index: 5;
+  overflow: hidden;
   position: absolute;
   top: 27%;
   left: 50%;
@@ -120,6 +146,7 @@
 }
 
 .parentcontainer .containermanager .imgarea i {
+  z-index: 10;
   position: absolute;
   top: 44%;
   left: 44%;
@@ -127,6 +154,74 @@
           transform: translate(-50%, -50%);
   font-size: 150px;
   color: #E11D48;
+}
+
+.parentcontainer .containermanager .imgarea .vlines-con .vlines {
+  height: 200px;
+  width: 10px;
+  background: red;
+  position: absolute;
+  opacity: 0.4;
+}
+
+.parentcontainer .containermanager .imgarea .vlines-con .vlines:nth-child(1) {
+  left: 9%;
+  background: #22a6b3;
+  top: 50%;
+}
+
+.parentcontainer .containermanager .imgarea .vlines-con .vlines:nth-child(2) {
+  left: 18%;
+  background: #22a6b3;
+  top: 50%;
+}
+
+.parentcontainer .containermanager .imgarea .vlines-con .vlines:nth-child(3) {
+  left: 27%;
+  background: #e84393;
+  top: 80%;
+}
+
+.parentcontainer .containermanager .imgarea .vlines-con .vlines:nth-child(4) {
+  left: 36%;
+  background: #82589F;
+  top: 70%;
+}
+
+.parentcontainer .containermanager .imgarea .vlines-con .vlines:nth-child(5) {
+  left: 45%;
+  background: #be2edd;
+  top: 20%;
+}
+
+.parentcontainer .containermanager .imgarea .vlines-con .vlines:nth-child(6) {
+  left: 54%;
+  background: #6D214F;
+  top: 40%;
+}
+
+.parentcontainer .containermanager .imgarea .vlines-con .vlines:nth-child(7) {
+  left: 63%;
+  background: #e84393;
+  top: 80%;
+}
+
+.parentcontainer .containermanager .imgarea .vlines-con .vlines:nth-child(8) {
+  left: 72%;
+  background: #82589F;
+  top: 70%;
+}
+
+.parentcontainer .containermanager .imgarea .vlines-con .vlines:nth-child(9) {
+  left: 81%;
+  background: #6D214F;
+  top: 40%;
+}
+
+.parentcontainer .containermanager .imgarea .vlines-con .vlines:nth-child(10) {
+  left: 90%;
+  background: #be2edd;
+  top: 20%;
 }
 
 .parentcontainer .containermanager .songcredits {
@@ -147,8 +242,25 @@
   text-align: center;
 }
 
-button {
+button,
+i {
   cursor: pointer;
+}
+
+#bfwd {
+  position: absolute;
+  top: 89%;
+  left: 10%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#nfwd {
+  position: absolute;
+  top: 89%;
+  left: 90%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 @media (max-width: 400px) {
@@ -158,7 +270,7 @@ button {
   .parentcontainer .containermanager .lowercontainer button:nth-child(1) {
     position: absolute;
     top: 90%;
-    left: 15%;
+    left: 30%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
   }
@@ -172,7 +284,21 @@ button {
   .parentcontainer .containermanager .lowercontainer button:nth-child(3) {
     position: absolute;
     top: 90%;
-    left: 85%;
+    left: 70%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  #bfwd {
+    position: absolute;
+    top: 90%;
+    left: 10%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  #nfwd {
+    position: absolute;
+    top: 90%;
+    left: 90%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
   }
