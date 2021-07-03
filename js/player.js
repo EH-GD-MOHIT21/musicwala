@@ -56,11 +56,6 @@ document.getElementById('nxtbtn').addEventListener('click', function() {
         updateuservisited(true, random_value);
         songAddress = path;
 
-        try {
-            clearInterval(setid);
-        } catch (err) {
-            console.log();
-        }
 
         document.getElementById('mainaudio').src = songAddress;
         setid = setInterval(xyz, 100);
@@ -91,7 +86,7 @@ document.getElementById('nxtbtn').addEventListener('click', function() {
 
 function xyz() {
     try {
-        if(document.getElementById("mainaudio").duration==NaN || finalDuration == NaN)
+        if (isNaN(document.getElementById("mainaudio").duration))
             return
         parseInt(document.getElementById("mainaudio").duration);
         finalDuration = Math.floor(document.getElementById("mainaudio").duration);
@@ -227,33 +222,37 @@ function playAudio(notfunccall = true) {
     }
     // loading time for tag
     finalDuration = Math.floor(document.getElementById("mainaudio").duration);
-    document.getElementById('starttime').textContent = "00:00";
+    if (!isNaN(finalDuration)) {
+        document.getElementById('starttime').textContent = "00:00";
 
-    minutes = parseInt(finalDuration / 60);
-    seconds = parseInt(finalDuration - minutes * 60);
+        minutes = parseInt(finalDuration / 60);
+        seconds = parseInt(finalDuration - minutes * 60);
 
-    if (minutes < 10) {
-        minutes = "0" + minutes;
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+        if (seconds < 10) {
+            seconds = "0" + seconds;
+        }
+        document.getElementById('finalDur').textContent = minutes + ":" + seconds;
     }
-    if (seconds < 10) {
-        seconds = "0" + seconds;
-    }
-    document.getElementById('finalDur').textContent = minutes + ":" + seconds;
     stateisReady = false;
 }
 
 function updatecurrenttime() {
     fakemohit = mohit + 50; // copy of variable(shifting origin)
     starttime = Math.floor(finalDuration * fakemohit / 100);
-    starttime_min = Math.floor(starttime / 60);
-    starttime_sec = Math.floor(starttime - starttime_min * 60);
-    if (starttime_min < 10) {
-        starttime_min = "0" + starttime_min;
+    if (!isNaN(starttime)) {
+        starttime_min = Math.floor(starttime / 60);
+        starttime_sec = Math.floor(starttime - starttime_min * 60);
+        if (starttime_min < 10) {
+            starttime_min = "0" + starttime_min;
+        }
+        if (starttime_sec < 10) {
+            starttime_sec = "0" + starttime_sec;
+        }
+        document.getElementById('starttime').textContent = starttime_min + ":" + starttime_sec;
     }
-    if (starttime_sec < 10) {
-        starttime_sec = "0" + starttime_sec;
-    }
-    document.getElementById('starttime').textContent = starttime_min + ":" + starttime_sec;
 }
 
 
@@ -274,11 +273,6 @@ document.getElementById('prevbtn').addEventListener('click', function() {
 
     songAddress = path
 
-    try {
-        clearInterval(setid)
-    } catch (err) {
-        console.log()
-    }
 
     setid = setInterval(xyz, 100);
     document.getElementById('mainaudio').src = songAddress;
