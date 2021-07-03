@@ -222,6 +222,9 @@ function playAudio(notfunccall = true) {
     }
     // loading time for tag
     finalDuration = Math.floor(document.getElementById("mainaudio").duration);
+    if (isNaN(finalDuration)) {
+        playAudio(false)
+    }
     if (!isNaN(finalDuration)) {
         document.getElementById('starttime').textContent = "00:00";
 
