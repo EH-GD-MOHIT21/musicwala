@@ -62,8 +62,8 @@ document.getElementById('nxtbtn').addEventListener('click', function() {
             console.log();
         }
 
-        setid = setInterval(xyz, 100);
         document.getElementById('mainaudio').src = songAddress;
+        setid = setInterval(xyz, 100);
 
         changeNames(music, singer);
         playAudio();
@@ -91,9 +91,10 @@ document.getElementById('nxtbtn').addEventListener('click', function() {
 
 function xyz() {
     try {
+        if(document.getElementById("mainaudio").duration==NaN)
+            return
         parseInt(document.getElementById("mainaudio").duration);
-        if (parseInt(document.getElementById("mainaudio").duration) == NaN)
-            console.log("yes")
+        finalDuration = Math.floor(document.getElementById("mainaudio").duration);
         playAudio(notfunccall = false);
         clearInterval(setid);
     } catch (err) {
