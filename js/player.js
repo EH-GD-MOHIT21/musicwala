@@ -92,6 +92,8 @@ document.getElementById('nxtbtn').addEventListener('click', function() {
 function xyz() {
     try {
         parseInt(document.getElementById("mainaudio").duration);
+        if (parseInt(document.getElementById("mainaudio").duration) == NaN)
+            return
         playAudio(notfunccall = false);
         clearInterval(setid);
     } catch (err) {
