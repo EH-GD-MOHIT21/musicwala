@@ -88,7 +88,6 @@ function xyz() {
     try {
         if (isNaN(document.getElementById("mainaudio").duration))
             return
-        parseInt(document.getElementById("mainaudio").duration);
         finalDuration = Math.floor(document.getElementById("mainaudio").duration);
         playAudio(notfunccall = false);
         clearInterval(setid);
@@ -222,7 +221,9 @@ function playAudio(notfunccall = true) {
         audiosong = new Audio(songAddress);
         audiosong.play();
     }
-    // loading time for tag
+    if (isNaN(document.getElementById("mainaudio").duration))
+        return
+        // loading time for tag
     finalDuration = Math.floor(document.getElementById("mainaudio").duration);
 
     if (!isNaN(finalDuration)) {
@@ -300,6 +301,8 @@ document.getElementById('prevbtn').addEventListener('click', function() {
 })
 
 function prevMusic() {
+    if (isNaN(finalDuration))
+        return
     try {
         audiosong.currentTime -= 10.0;
         if ((mohit - ((100 / finalDuration) * (10.0))) >= -50)
@@ -315,6 +318,8 @@ function prevMusic() {
 
 
 function nextMusic() {
+    if (isNaN(finalDuration))
+        return
     try {
         audiosong.currentTime += 10.0;
         if ((mohit + ((100 / finalDuration) * (10.0))) <= 50)
