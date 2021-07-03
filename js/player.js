@@ -1,6 +1,7 @@
 UserSongLists = [0] // keeps a track of visited songs
 userindex = 0 // keeps a track of max_index
 document.getElementById('starttime').textContent = "00:00";
+finalDuration = NaN
 // fake music api
 
 const MEDIA_ROOT = '/media';
