@@ -93,7 +93,7 @@ function xyz() {
     try {
         parseInt(document.getElementById("mainaudio").duration);
         if (parseInt(document.getElementById("mainaudio").duration) == NaN)
-            return
+            console.log("yes")
         playAudio(notfunccall = false);
         clearInterval(setid);
     } catch (err) {
