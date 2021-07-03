@@ -196,6 +196,8 @@ document.getElementById('playbtn').addEventListener('click', function() {
 })
 
 function lineincreasefunc() {
+    if (isNaN(finalDuration))
+        return
     if (mohit > 50) {
         clearInterval(id);
 
@@ -222,6 +224,7 @@ function playAudio(notfunccall = true) {
     }
     // loading time for tag
     finalDuration = Math.floor(document.getElementById("mainaudio").duration);
+
     if (!isNaN(finalDuration)) {
         document.getElementById('starttime').textContent = "00:00";
 
@@ -240,6 +243,8 @@ function playAudio(notfunccall = true) {
 }
 
 function updatecurrenttime() {
+    if (isNaN(finalDuration))
+        return
     fakemohit = mohit + 50; // copy of variable(shifting origin)
     starttime = Math.floor(finalDuration * fakemohit / 100);
     if (!isNaN(starttime)) {
