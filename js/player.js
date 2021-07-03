@@ -1,6 +1,6 @@
 UserSongLists = [0] // keeps a track of visited songs
 userindex = 0 // keeps a track of max_index
-
+document.getElementById('starttime').textContent = "00:00";
 // fake music api
 
 const MEDIA_ROOT = '/media';
@@ -227,7 +227,7 @@ function playAudio(notfunccall = true) {
     finalDuration = Math.floor(document.getElementById("mainaudio").duration);
 
     if (!isNaN(finalDuration)) {
-        document.getElementById('starttime').textContent = "00:00";
+        // document.getElementById('starttime').textContent = "00:00";
 
         minutes = parseInt(finalDuration / 60);
         seconds = parseInt(finalDuration - minutes * 60);
