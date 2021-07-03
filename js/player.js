@@ -91,7 +91,7 @@ document.getElementById('nxtbtn').addEventListener('click', function() {
 
 function xyz() {
     try {
-        if(document.getElementById("mainaudio").duration==NaN)
+        if(document.getElementById("mainaudio").duration==NaN || finalDuration == NaN)
             return
         parseInt(document.getElementById("mainaudio").duration);
         finalDuration = Math.floor(document.getElementById("mainaudio").duration);
