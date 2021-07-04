@@ -103,3 +103,8 @@ document.getElementById('sunico').addEventListener('click', function() {
         document.getElementById('foottext').style.color = "white";
     }
 })
+
+document.getElementById('clockico').addEventListener('click', function() {
+    color_no = Math.floor(Math.random() * (listColors.length))
+    document.getElementById('mainplayline').style.background = listColors[color_no];
+})
