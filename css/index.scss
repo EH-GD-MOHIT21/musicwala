@@ -68,6 +68,9 @@
             #helpguide {
                 @include centeritem("noflex", "", 5%, 5%);
             }
+            #clockico {
+                @include centeritem("noflex", "", 5%, 20%);
+            }
             #sunico {
                 @include centeritem("noflex", "", 5%, 80%);
             }
