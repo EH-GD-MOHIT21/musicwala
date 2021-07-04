@@ -2,6 +2,7 @@
 
 DefaultValues = [50, 50, 80, 70, 20, 40, 80, 70, 40, 20]
 Animation_on = true
+decmenter = 1
 listColors = [
     "#00b894",
     "#0984e3",
@@ -35,11 +36,11 @@ function createAnimation() {
 function first(index) {
     value = DefaultValues[index]
     if (dec[index]) {
-        DefaultValues[index] -= 1
+        DefaultValues[index] -= decmenter
     } else {
-        DefaultValues[index] += 1
+        DefaultValues[index] += decmenter
     }
-    if (DefaultValues[index] <= 15) {
+    if (DefaultValues[index] <= 4) {
         dec[index] = false
         objects[index].style.background = listColors[Math.floor(Math.random() * 10)]
     } else if (DefaultValues[0] >= 85) {
@@ -50,7 +51,11 @@ function first(index) {
 }
 
 document.getElementById('animateManager').addEventListener('click', function() {
-    if (Animation_on) {
+    decmenter += 1
+    if (decmenter >= 4) {
+        decmenter = 0
+    }
+    if (Animation_on && decmenter == 0) {
         clearInterval(id1);
         clearInterval(id2);
         clearInterval(id3);
@@ -62,10 +67,12 @@ document.getElementById('animateManager').addEventListener('click', function() {
         clearInterval(id9);
         clearInterval(id10);
         Animation_on = false
-    } else {
+    } else if (!Animation_on) {
+        decmenter = 1
         createAnimation()
         Animation_on = true;
     }
+
 });
 
 
@@ -81,3 +88,18 @@ document.getElementById('helpguide').addEventListener('click', function() {
 
 
 createAnimation()
+
+
+// sun icon manager
+
+document.getElementById('sunico').addEventListener('click', function() {
+    if (this.className == 'fa fa-sun-o') {
+        this.className = 'fa fa-moon-o';
+        document.querySelector('body').style.background = "white";
+        document.getElementById('foottext').style.color = "black";
+    } else {
+        this.className = 'fa fa-sun-o';
+        document.querySelector('body').style.background = "#171d23";
+        document.getElementById('foottext').style.color = "white";
+    }
+})
