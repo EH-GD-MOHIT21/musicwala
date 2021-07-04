@@ -258,12 +258,16 @@ document.getElementById('nfwd').addEventListener('click', forwardsometime);
 
 // bug probabity high
 document.getElementById('parentline').addEventListener('click', (event) => {
-    const { duration } = music;
-
-    progress = (event.offsetX / event.srcElement.clientWidth) * duration;
-
-    // console.log(event, event.offsetX, event.srcElement.clientWidth);
-
+    
+    const { currentTime, duration } = music;
+    var devicewidth = window.innerWidth;
+    
+    var linewidth = parseInt((window.getComputedStyle(document.getElementById('parentline')).width).slice(0, -2));
+    restwidth = (devicewidth - linewidth) / 2;
+    
+    progress = ((event.x - restwidth) / event.srcElement.clientWidth) * duration;
+    console.log(progress, linewidth);
+    
     try {
         PlayingSong.currentTime = progress;
     } catch (err) {
