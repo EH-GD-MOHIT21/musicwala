@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 
-<body>
+<body class="animationbody">
     <div class="parentcontainer">
         <div class="uppercontainer"></div>
         <div class="containermanager">
             <div class="uppericons">
                 <i id="helpguide" class="fa fa-question-circle" aria-hidden="true"></i>
                 <i id="animateManager" class="fa fa-sliders" aria-hidden="true"></i>
+                <i id="sunico" class="fa fa-moon-o" aria-hidden="true"></i>
             </div>
             <div class="imgarea">
                 <i id="imgarea" class="fa fa-music" aria-hidden="true"></i>
@@ -35,10 +36,14 @@
                 </div>
             </div>
             <div class="songcredits">
-                <h3 id="stitle">Heartless Badshah</h3>
-                <h4 id="sname">Badshah</h4>
+                <marquee>
+                    <h3 id="stitle">Heartless Badshah</h3>
+                </marquee>
+                <marquee>
+                    <h4 id="sname">Badshah</h4>
+                </marquee>
             </div>
-            <div class="playlinecontainer">
+            <div class="playlinecontainer" id="parentline" style="cursor: pointer;">
                 <div class="playline" id="mainplayline"></div>
             </div>
             <div class="audiocontainer">
@@ -58,10 +63,11 @@
         </div>
     </div>
     <div class="footer">
-        <footer>copyright &copy; 2021 musicwala | All Rights Reserved</footer>
+        <footer id="foottext">copyright &copy; 2021 musicwala | All Rights Reserved</footer>
     </div>
 </body>
 <script src="js/player.js"></script>
 <script src="js/animation.js"></script>
+
 
 </html>
