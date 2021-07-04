@@ -68,6 +68,9 @@
             #helpguide {
                 @include centeritem("noflex", "", 5%, 5%);
             }
+            #sunico {
+                @include centeritem("noflex", "", 5%, 80%);
+            }
         }
         .playline,
         .playlinecontainer {
