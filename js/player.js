@@ -216,6 +216,7 @@ function choosetheme() {
     randomValue = Math.floor(Math.random() * 10);
     color = listColors[randomValue];
     document.getElementById('imgarea').style.color = color;
+    changeColor()
 }
 
 
@@ -240,6 +241,20 @@ function forwardsometime() {
 
 
 
+function changeColor() {
+    // version 2.2
+
+    Color = window.getComputedStyle(document.getElementById('imgarea')).color;
+    // rgb(34, 166, 179)
+
+    Color = Color.slice(4, -1);
+    // 34, 166, 179
+    Alpha = 0.2
+    document.getElementById('imgarea').style.color = "rgba(" + Color + ", " + Alpha + ")";
+}
+
+
+
 //  element listners
 
 document.getElementById('playbtn').addEventListener('click', playsong);
@@ -252,18 +267,22 @@ document.getElementById('bfwd').addEventListener('click', backsometime);
 
 document.getElementById('nfwd').addEventListener('click', forwardsometime);
 
+// version 2.2
+document.getElementById('imgarea').addEventListener('click', function() {
+    choosetheme();
+});
 
 
 
+// bug probabity high -> fixed(use version 2.1 +)
 
-// bug probabity high
-document.getElementById('parentline').addEventListener('click', (event) => {
-    const { duration } = music;
 
-    progress = (event.offsetX / event.srcElement.clientWidth) * duration;
-
-    // console.log(event, event.offsetX, event.srcElement.clientWidth);
-
+document.getElementById('parentline').addEventListener("click", (event) => {
+    const { currentTime, duration } = music;
+    var devicewidth = window.innerWidth;
+    var linewidth = parseInt((window.getComputedStyle(document.getElementById('parentline')).width).slice(0, -2));
+    restwidth = (devicewidth - linewidth) / 2;
+    progress = ((event.x - restwidth) / event.srcElement.clientWidth) * duration;
     try {
         PlayingSong.currentTime = progress;
     } catch (err) {
@@ -272,7 +291,9 @@ document.getElementById('parentline').addEventListener('click', (event) => {
 
 });
 
-// ends here (skip bug)
+
+
+// ends here (skip bug) -> fixed in (version 2.1 or higher)
 
 
 
@@ -322,10 +343,20 @@ music.addEventListener("timeupdate", (event) => {
         document.getElementById('playbtn').className = "fa fa-play-circle-o playbtn";
         document.getElementById('starttime').textContent = "0:00";
         document.getElementById('mainplayline').style.transform = "translate(-52%,-50%)";
+        changableico = document.getElementById('changingico')
+        if (changableico.innerText == "repeat") {
+            alert('song over please use loop or shuffle to listen music unintruptly.');
+        } else if (changableico.innerText == "repeat_one") {
+            songisplaying = false;
+            is_paused = false;
+            choosetheme();
+            playsong();
+        } else {
+            playnewsong();
+        }
     }
 
 });
-
 
 
 

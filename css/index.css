@@ -5,6 +5,38 @@
           box-sizing: border-box;
 }
 
+.sublowercontainer::-moz-selection,
+.lowercontainer::-moz-selection,
+.playlinecontainer::-moz-selection,
+.additionalicons::-moz-selection,
+.imgarea::-moz-selection,
+.uppericons::-moz-selection {
+  background-color: transparent;
+}
+
+.sublowercontainer::selection,
+.lowercontainer::selection,
+.playlinecontainer::selection,
+.additionalicons::selection,
+.imgarea::selection,
+.uppericons::selection {
+  background-color: transparent;
+}
+
+.sublowercontainer,
+.lowercontainer,
+.playlinecontainer,
+.additionalicons,
+.imgarea,
+.uppericons {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  /*You just need this if you are only concerned with android and not desktop browsers.*/
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 .parentcontainer {
   width: 400px;
   height: 400px;
@@ -82,6 +114,14 @@
   position: absolute;
   top: 5%;
   left: 5%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.parentcontainer .containermanager .uppericons #clockico {
+  position: absolute;
+  top: 5%;
+  left: 20%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
@@ -241,6 +281,43 @@
   text-align: center;
 }
 
+.parentcontainer .containermanager .additionalicons #changingico {
+  position: absolute;
+  top: 65%;
+  left: 7%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.parentcontainer .containermanager .additionalicons #changingico::-moz-selection {
+  background: none;
+}
+
+.parentcontainer .containermanager .additionalicons #changingico::selection {
+  background: none;
+}
+
+.parentcontainer .containermanager .additionalicons i {
+  font-size: 20px;
+  position: absolute;
+  top: 65%;
+  left: 94%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.outerclassAnimation {
+  overflow: auto;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.animationword {
+  font-size: 60px;
+  color: crimson;
+}
+
 .footer {
   display: block;
   width: 100vw;
@@ -309,6 +386,12 @@ i {
     left: 90%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 500px) {
+  .animationword {
+    font-size: 32px;
   }
 }
 /*# sourceMappingURL=index.css.map */

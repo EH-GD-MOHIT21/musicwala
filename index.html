@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="css/index.css">
@@ -17,6 +18,7 @@
         <div class="containermanager">
             <div class="uppericons">
                 <i id="helpguide" class="fa fa-question-circle" aria-hidden="true"></i>
+                <i id="clockico" class="fa fa-clock-o" aria-hidden="true"></i>
                 <i id="animateManager" class="fa fa-sliders" aria-hidden="true"></i>
                 <i id="sunico" class="fa fa-moon-o" aria-hidden="true"></i>
             </div>
@@ -43,6 +45,12 @@
                     <h4 id="sname">Badshah</h4>
                 </marquee>
             </div>
+            <div class="additionalicons">
+                <span class="material-icons-outlined" id="changingico">
+                    repeat
+                </span>
+                <i id="pluganimate" class="fa fa-plug" aria-hidden="true"></i>
+            </div>
             <div class="playlinecontainer" id="parentline" style="cursor: pointer;">
                 <div class="playline" id="mainplayline"></div>
             </div>
@@ -51,16 +59,29 @@
             </div>
             <div id="starttime" class="starttime">0:00</div>
             <div id="finalDur" class="endtime">00:00</div>
-            <div class="lowercontainer">
-                <button><i id="prevbtn" class="fa fa-step-backward" aria-hidden="true"></i></button>
-                <button><i id="playbtn" class="fa fa-play-circle-o playbtn" aria-hidden="true"></i></button>
-                <button><i id="nxtbtn" class="fa fa-step-forward" aria-hidden="true"></i></button>
-            </div>
-            <div class="sublowercontainer">
-                <i id="bfwd" class="fa fa-backward" aria-hidden="true"></i>
-                <i id="nfwd" class="fa fa-forward" aria-hidden="true"></i>
+            <div id="rcdownicos">
+                <div class="lowercontainer">
+                    <button><i id="prevbtn" class="fa fa-step-backward" aria-hidden="true"></i></button>
+                    <button><i id="playbtn" class="fa fa-play-circle-o playbtn" aria-hidden="true"></i></button>
+                    <button><i id="nxtbtn" class="fa fa-step-forward" aria-hidden="true"></i></button>
+                </div>
+                <div class="sublowercontainer">
+                    <i id="bfwd" class="fa fa-backward" aria-hidden="true"></i>
+                    <i id="nfwd" class="fa fa-forward" aria-hidden="true"></i>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="outerclassAnimation" id="wordwala">
+        <span class="animationword">M</span>
+        <span class="animationword">U</span>
+        <span class="animationword">S</span>
+        <span class="animationword">I</span>
+        <span class="animationword">C</span>
+        <span class="animationword">W</span>
+        <span class="animationword">A</span>
+        <span class="animationword">L</span>
+        <span class="animationword">A</span>
     </div>
     <div class="footer">
         <footer id="foottext">copyright &copy; 2021 musicwala | All Rights Reserved</footer>
@@ -68,6 +89,6 @@
 </body>
 <script src="js/player.js"></script>
 <script src="js/animation.js"></script>
-
+<script src="js/wordAnimation.js"></script>
 
 </html>

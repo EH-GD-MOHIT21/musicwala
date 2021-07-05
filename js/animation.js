@@ -103,3 +103,27 @@ document.getElementById('sunico').addEventListener('click', function() {
         document.getElementById('foottext').style.color = "white";
     }
 })
+
+document.getElementById('clockico').addEventListener('click', function() {
+    color_no = Math.floor(Math.random() * (listColors.length))
+    document.getElementById('mainplayline').style.background = listColors[color_no];
+});
+
+
+// version 2.2 Feature Update Here
+CHANGINGICOSTATUS = 0
+document.getElementById('changingico').addEventListener('click', function() {
+    CHANGINGICOSTATUS += 1;
+    CHANGINGICOSTATUS = CHANGINGICOSTATUS % 3;
+    switch (CHANGINGICOSTATUS) {
+        case 0:
+            document.getElementById('changingico').innerText = "repeat";
+            break;
+        case 1:
+            document.getElementById('changingico').innerText = "repeat_one";
+            break;
+        case 2:
+            document.getElementById('changingico').innerText = "shuffle";
+            break;
+    }
+})
